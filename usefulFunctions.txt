@@ -1,0 +1,9 @@
+rb.useGravity = t/f; //if gravity is applied
+rb.AddForce(x, y, z); //applies force to object
+direction * Time.detlaTime; //changes applied to delta time as opposed to frames
+
+
+FixedUpdate() instead of Update() for physics stuff
+
+
+RigidBody - Is Kinematic: makes it only account for kinematics (no movement/gravity, only collision)

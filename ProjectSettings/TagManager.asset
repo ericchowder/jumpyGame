@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - platform
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,7 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 2275710119
+    locked: 0
+  - name: GameObjects
+    uniqueID: 2367564433
     locked: 0

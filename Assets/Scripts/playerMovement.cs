@@ -9,6 +9,7 @@ public class playerMovement : MonoBehaviour {
 	private Vector2 pos;
 	private bool touchingPlatform = false;
 	public float jumpVelocity = 5f;
+	public GameObject loserMenuUI;
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();	
@@ -27,6 +28,11 @@ public class playerMovement : MonoBehaviour {
 			// won't let me modify transform.position directly
 			pos.x = -2;
 			transform.position = pos;
+		}
+
+		// when player below viewable screen, losing menu appears
+		if (transform.position.y < -6) {
+			loserMenuUI.SetActive (true);
 		}
 	}
 

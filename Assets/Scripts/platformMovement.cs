@@ -15,8 +15,12 @@ public class platformMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		//rb.transform.position.x = rb.transform.position.x;
-
+		// Playform movement/posiiton based on speed
 		rb.MovePosition (rb.position + Vector2.left * Time.fixedDeltaTime * speed);
+
+		// Destroys platform instance when out of screen
+		if (transform.position.x < -30) {
+			Destroy (gameObject);
+		}
 	}
 }

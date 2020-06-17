@@ -34,6 +34,8 @@ public class playerMovement : MonoBehaviour {
 		if (transform.position.y < -6) {
 			loserMenuUI.SetActive (true);
 		}
+
+		Debug.Log ("Current Time is: " + Time.time);
 	}
 
 	// checks if collided (touching) platform

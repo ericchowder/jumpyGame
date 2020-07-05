@@ -1449,8 +1449,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e326cc354bca16440a6ada10cc190821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpVelocity: 5
   loserMenuUI: {fileID: 1074377851}
+  animator: {fileID: 1116283056}
+  jumpVelocity: 5
 --- !u!95 &1116283056
 Animator:
   serializedVersion: 3

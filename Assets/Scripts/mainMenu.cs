@@ -7,10 +7,21 @@ public class mainMenu : MonoBehaviour {
 
 	public GameObject mainMenuUI;
 	public GameObject instructionsMenuUI;
+	public GameObject spawnerActive;
+	public GameObject startingPlatform;
+	public Rigidbody2D startingPlatformRB;
+
+	void Awake() {
+		spawnerActive.SetActive (false);
+		startingPlatformRB.constraints = RigidbodyConstraints2D.FreezeAll;
+		startingPlatform.GetComponent<platformMovement> ().enabled = false;
+	}
 
 	// Main Menu button functions
-	public void hitPlay () {
-		mainMenuUI.SetActive (false);
+	public void hitPlay() {
+		mainMenuUI.SetActive(false);
+		spawnerActive.SetActive(true);
+		startingPlatform.GetComponent<platformMovement> ().enabled = true;
 	}
 
 	public void hitInstructions () {
@@ -18,18 +29,18 @@ public class mainMenu : MonoBehaviour {
 		instructionsMenuUI.SetActive (true);
 	}
 		
-	public void hitQuit () {
+	public void hitQuit() {
 		Application.Quit();
 	}
 
 	// Instruction Menu button functions
-	public void hitMenu () {
-		instructionsMenuUI.SetActive (false);
-		mainMenuUI.SetActive (true);
+	public void hitMenu() {
+		instructionsMenuUI.SetActive(false);
+		mainMenuUI.SetActive(true);
 	}
 
 	// Losing Menu button functions
-	public void restartGame () {
-		SceneManager.LoadScene ("mainGameScene");
+	public void restartGame() {
+		SceneManager.LoadScene("mainGameScene");
 	}
 }

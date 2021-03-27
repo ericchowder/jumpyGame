@@ -24,6 +24,10 @@ public class platformSpawner : MonoBehaviour {
 	}
 
 	void SpawnPlatforms () {
-		Instantiate (platformPrefab, gameObject.transform.position, Quaternion.identity);
+		// Create new platform
+		GameObject platformInstance = Instantiate (platformPrefab, 
+			gameObject.transform.position, Quaternion.identity);
+		// Assign to platforms layer
+		platformInstance.layer = LayerMask.NameToLayer("platforms");
 	}
 }

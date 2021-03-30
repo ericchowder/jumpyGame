@@ -8,6 +8,7 @@ public class mainMenu : MonoBehaviour {
 	public GameObject mainMenuUI;
 	public GameObject instructionsMenuUI;
 	public GameObject spawnerActive;
+	public GameObject bgSpawner;
 	public GameObject startingPlatform;
 	public Rigidbody2D startingPlatformRB;
 

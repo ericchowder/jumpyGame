@@ -2,34 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class platformSpawner : MonoBehaviour {
+public class backgroundSpawner : MonoBehaviour {	
 
-	public GameObject platformPrefab;
+	public GameObject bgPrefab;
 
 	// the time that it will spawn
 	public float spawnTime = 2f;
 	// interval of time between spawns
-	public float spawnInterval = 1f;
+	public float spawnInterval = 4f;
 
+	// Use this for initialization
 	void Start () {
 		
 	}
-
+	
+	// Update is called once per frame
 	void Update () {
 		// platforms spawn when whenever new interval is hit
 		if (Time.time >= spawnTime) {
-			SpawnPlatforms ();
+			SpawnBackground ();
 			spawnTime = Time.time + spawnInterval;
 		}
 	}
 
-	void SpawnPlatforms () {
-		// Create new platform
-		GameObject platformInstance = Instantiate (platformPrefab, 
+	void SpawnBackground () {
+		GameObject bgInstance = Instantiate (bgPrefab,
 			gameObject.transform.position, Quaternion.identity);
-		// Assign to platforms layer
-		platformInstance.layer = LayerMask.NameToLayer("platforms");
+		bgInstance.SetActive (true);
 	}
-
-
 }

@@ -14,7 +14,7 @@ public class playerMovement : MonoBehaviour {
 
 	// Script variables
 	private Vector2 pos;
-	private bool touchingPlatform = false;
+	//private bool touchingPlatform = false;
 	public float jumpVelocity = 5f;
 
 	void Start () {

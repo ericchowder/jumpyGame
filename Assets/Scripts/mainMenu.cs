@@ -23,6 +23,8 @@ public class mainMenu : MonoBehaviour {
 		mainMenuUI.SetActive(false);
 		spawnerActive.SetActive(true);
 		startingPlatform.GetComponent<platformMovement> ().enabled = true;
+
+		timerController.instance.BeginTimer();
 	}
 
 	public void hitInstructions () {

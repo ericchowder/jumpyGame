@@ -57,8 +57,8 @@ public class playerMovement : MonoBehaviour {
 			loserMenuUI.SetActive (true);
 		}
 
-		Debug.Log ("Current Time is: " + Time.time);
-		Debug.Log ("is grounded: " + isGrounded());
+		//Debug.Log ("Current Time is: " + Time.time);
+		//Debug.Log ("is grounded: " + isGrounded());
 	}
 
 	// checks if collided (touching) platform

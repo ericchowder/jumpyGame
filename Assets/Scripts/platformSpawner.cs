@@ -11,11 +11,11 @@ public class platformSpawner : MonoBehaviour {
 	// interval of time between spawns
 	public float spawnInterval = 1f;
 
-	void Start () {
+	void Start() {
 		
 	}
 
-	void Update () {
+	void Update() {
 		// platforms spawn when whenever new interval is hit
 		if (Time.time >= spawnTime) {
 			SpawnPlatforms ();
@@ -23,9 +23,9 @@ public class platformSpawner : MonoBehaviour {
 		}
 	}
 
-	void SpawnPlatforms () {
+	void SpawnPlatforms() {
 		// Create new platform
-		GameObject platformInstance = Instantiate (platformPrefab, 
+		GameObject platformInstance = Instantiate(platformPrefab, 
 			gameObject.transform.position, Quaternion.identity);
 		// Assign to platforms layer
 		platformInstance.layer = LayerMask.NameToLayer("platforms");

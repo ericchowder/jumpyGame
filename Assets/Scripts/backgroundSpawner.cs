@@ -12,22 +12,22 @@ public class backgroundSpawner : MonoBehaviour {
 	public float spawnInterval = 4f;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update() {
 		// platforms spawn when whenever new interval is hit
 		if (Time.time >= spawnTime) {
-			SpawnBackground ();
+			SpawnBackground();
 			spawnTime = Time.time + spawnInterval;
 		}
 	}
 
-	void SpawnBackground () {
-		GameObject bgInstance = Instantiate (bgPrefab,
+	void SpawnBackground() {
+		GameObject bgInstance = Instantiate(bgPrefab,
 			gameObject.transform.position, Quaternion.identity);
-		bgInstance.SetActive (true);
+		bgInstance.SetActive(true);
 	}
 }

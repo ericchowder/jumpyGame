@@ -17,7 +17,7 @@ public class playerMovement : MonoBehaviour {
 	//private bool touchingPlatform = false;
 	public float jumpVelocity = 5f;
 
-	void Start () {
+	void Start() {
 		// Gets native GameObject's rigidbody
 		rb = GetComponent<Rigidbody2D>();	
 		// Gets native GameObject's boxcollider
@@ -26,7 +26,7 @@ public class playerMovement : MonoBehaviour {
 		animator.SetBool("playerJump", false);
 	}
 
-	void Update () {
+	void Update() {
 		// jumping function (only jumps when touching platform)
 		/* old jump function
 		if (Input.GetKeyDown (KeyCode.Space) && touchingPlatform == true) {
@@ -38,7 +38,7 @@ public class playerMovement : MonoBehaviour {
 		*/
 
 		// new jump function
-		if (Input.GetKeyDown (KeyCode.Space) && isGrounded()) {
+		if (Input.GetKeyDown(KeyCode.Space) && isGrounded()) {
 			rb.velocity = Vector2.up * jumpVelocity;
 			// touchingPlatform to false to disable multi-jump
 			animator.SetBool ("playerJump", true);
@@ -54,7 +54,7 @@ public class playerMovement : MonoBehaviour {
 
 		// when player below viewable screen, losing menu appears
 		if (transform.position.y < -6) {
-			loserMenuUI.SetActive (true);
+			loserMenuUI.SetActive(true);
 		}
 
 		//Debug.Log ("Current Time is: " + Time.time);
@@ -73,7 +73,7 @@ public class playerMovement : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collidedObject) {
 		if (collidedObject.gameObject.tag == "platform") {
-			animator.SetBool ("playerJump", false);
+			animator.SetBool("playerJump", false);
 		}
 	}
 

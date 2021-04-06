@@ -13,23 +13,23 @@ public class mainMenu : MonoBehaviour {
 	public Rigidbody2D startingPlatformRB;
 
 	void Awake() {
-		spawnerActive.SetActive (false);
+		spawnerActive.SetActive(false);
 		startingPlatformRB.constraints = RigidbodyConstraints2D.FreezeAll;
-		startingPlatform.GetComponent<platformMovement> ().enabled = false;
+		startingPlatform.GetComponent<platformMovement>().enabled = false;
 	}
 
 	// Main Menu button functions
 	public void hitPlay() {
 		mainMenuUI.SetActive(false);
 		spawnerActive.SetActive(true);
-		startingPlatform.GetComponent<platformMovement> ().enabled = true;
+		startingPlatform.GetComponent<platformMovement>().enabled = true;
 
 		timerController.instance.BeginTimer();
 	}
 
-	public void hitInstructions () {
-		mainMenuUI.SetActive (false);
-		instructionsMenuUI.SetActive (true);
+	public void hitInstructions() {
+		mainMenuUI.SetActive(false);
+		instructionsMenuUI.SetActive(true);
 	}
 		
 	public void hitQuit() {
